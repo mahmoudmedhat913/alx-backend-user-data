@@ -33,7 +33,7 @@ def get_logger() -> logging.Logger:
     return logger
 
 
-def get_db() -> mysql.connector.connection.MYSQLConnection:
+def get_db() -> mysql.connector.connection.MySQLConnection:
     """create a connector to the database"""
     db_connect = mysql.connector.connect(
         user=os.getenv('PERSONAL_DATA_DB_USERNAME', 'root'),
