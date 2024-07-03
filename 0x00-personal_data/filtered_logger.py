@@ -65,7 +65,7 @@ def main():
                 zip(columns, row),
             )
             msg = '{};'.format('; '.join(list(record)))
-            args = ("user_data", loggin_INFO, None, None, msg, None, None)
+            args = ("user_data", logging.INFO, None, None, msg, None, None)
             log_record = logging.LogRecord(*args)
             info_logger.handle(log_record)
 
