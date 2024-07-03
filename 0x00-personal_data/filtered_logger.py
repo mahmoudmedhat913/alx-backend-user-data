@@ -4,7 +4,7 @@ import os
 import re
 import logging
 import mysql.connector
-from Typing import List
+from typing import List
 
 
 patterns = {
