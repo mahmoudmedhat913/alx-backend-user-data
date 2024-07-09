@@ -9,7 +9,7 @@ import fnmatch
 class Auth:
     """authentication class
     """
-    def require_auth(self ,path: str, excluded_paths: List[str]) -> bool:
+    def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """method to check if auth is required
         """
         if path is None:
