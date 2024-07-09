@@ -15,7 +15,7 @@ class BasicAuth(Auth):
     """
     def extract_base64_authorization_header(
             self,
-            authorization_headr: str) -> str:
+            authorization_header: str) -> str:
         """extract base64 of the authorization header
         """
         if type(authorization_header) == str:
@@ -27,14 +27,14 @@ class BasicAuth(Auth):
 
     def decode_base64_authorization_header(
             self,
-            base64_authorization_headr: str,
+            base64_authorization_header: str,
             ) -> str:
         """decode base64 of the authorization header
         """
-        if type(base64_authorization_headr) == str:
+        if type(base64_authorization_header) == str:
             try:
                 res = base64.b64decode(
-                    base64_authorization_headr,
+                    base64_authorization_header,
                     validate=True,
                 )
                 return res.decode('utf-8')
@@ -43,13 +43,13 @@ class BasicAuth(Auth):
 
     def extract_user_credentials(
             self,
-            decoded_base64_authorization_headr: str
+            decoded_base64_authorization_header: str
             ) -> Tuple[str, str]:
         """extract the user credentials from decoded base64
         authorization headr
         """
-        if type(decoded_base64_authorization_headr) == str:
-            pattern = r'(?P<user>[^:]+):(?P<password>.+'
+        if type(decoded_base64_authorization_header) == str:
+            pattern = r'(?P<user>[^:]+):(?P<password>.+)'
             field_match = re.fullmatch(
                 pattern,
                 decoded_base64_authorization_header.strip(),
